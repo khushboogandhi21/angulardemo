@@ -1,1 +1,34 @@
+
 <p>invoicehome works!</p>
+<br><b>Welcome {{user | uppercase}} </b>
+<br><br>
+<br>Property Binding example:
+<input type="text" [value]="intVar">
+<br>
+<br>Event  Binding example:
+<input type="button" (click)="onSave($event)" [value]="buttonVal">
+<br><br>
+<br>Two Way Binding example:
+<input type="text" [(ngModel)]="twowayVar">
+<br><br>
+<br>Displaying two way value..
+<br>{{twowayVar}}
+<br><br>
+<div *ngIf="isShow; else elseBlock">
+  Displayed if isShow is true
+</div>
+<ng-template #elseBlock>
+ Else Block:  Displayed if isShow is true
+</ng-template>
+
+<br> ngFor example
+<ul>
+  <li *ngFor="let item of numlist; let i= index">
+    index = {{i}} value = {{item}}
+  </li>
+</ul>
+
+
+
+
+

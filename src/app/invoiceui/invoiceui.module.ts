@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InvoiceHomeComponent } from './invoicehome/invoicehome.component';
 import { RouterModule, Routes } from '@angular/router';
+import {FormsModule} from   '@angular/forms';
+
 
 const routes:Routes = [
 {path:'invoicehome', component: InvoiceHomeComponent}
@@ -10,9 +12,17 @@ const routes:Routes = [
 @NgModule({
   declarations: [
     InvoiceHomeComponent
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule
   ]
 })
-export class InvoiceUIModule { }
+export class InvoiceUIModule {
+ constructor(){
+  console.log("InvoiceUIModule loaded.");
+ }
+
+ }
