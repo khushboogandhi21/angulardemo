@@ -57,8 +57,8 @@ export class GetinvoiceComponent implements OnInit {
     this.childEvent.emit(this.childVar);
   }
   public async loadInvoiceById() {
-    const categories$ = this.invoiceService.getInvoiceById("/api/getInvoiceById", 91);
-    this.invoice = await firstValueFrom(categories$);
+    const invoices$ = this.invoiceService.getInvoiceById("/api/getInvoiceById", 91);
+    this.invoice = await firstValueFrom(invoices$);
   
   }
 }
