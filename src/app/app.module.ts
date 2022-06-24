@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import {FormsModule} from   '@angular/forms';
 import { AppheaderComponent } from './appheader/appheader.component';
 import { AppfooterComponent } from './appfooter/appfooter.component';
+import {SupplieruiModule} from './supplierui/supplierui.module';
+import {HttpClientModule} from '@angular/common/http';
+
+
 
 const routes:Routes = [
 {path:'appheader', component: AppheaderComponent},
@@ -22,7 +26,9 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SupplieruiModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

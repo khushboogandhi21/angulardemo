@@ -1,5 +1,5 @@
 
-<p>invoicehome works!</p>
+<p ><font color="blue">invoicehome page!</font></p>
 <br><b>Welcome {{user | uppercase}} </b>
 <br><br>
 <br>Property Binding example:
@@ -27,7 +27,15 @@
     index = {{i}} value = {{item}}
   </li>
 </ul>
+<br>
+<Br>Child sending intVar = {{intVar}}
+  <br>
 
+ <B>Get Invoice</B>
+<Br>
+
+<app-getinvoice [childVar]="intVar" (childEvent) = "getChildVar($event)"></app-getinvoice>
+<br>
 
 
 

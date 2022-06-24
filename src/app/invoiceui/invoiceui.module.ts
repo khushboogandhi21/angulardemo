@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { InvoiceHomeComponent } from './invoicehome/invoicehome.component';
 import { RouterModule, Routes } from '@angular/router';
 import {FormsModule} from   '@angular/forms';
+import { CreateinvoiceComponent } from './createinvoice/createinvoice.component';
+import { GetinvoiceComponent } from './getinvoice/getinvoice.component';
 
 
 const routes:Routes = [
@@ -11,7 +13,9 @@ const routes:Routes = [
 
 @NgModule({
   declarations: [
-    InvoiceHomeComponent
+    InvoiceHomeComponent,
+    CreateinvoiceComponent,
+    GetinvoiceComponent
 
   ],
   imports: [

@@ -1,0 +1,34 @@
+<p>getinvoice works!</p>
+<script>
+    const evtSource = new EventSource("/api/getAllInvoices");
+    evtSource.onmessage = function(event) {
+        console.log("message: " + event.data);
+    }
+</script>
+<br>
+childVar value received from parent is {{childVar}}
+<br>
+<input type="button" value="send data to parent" (click)="sendDataToParent()">  
+<br>
+<br/>
+
+<b><font color="green">List of Invoices</font></b>
+<Ul>
+    <!--Angular's async pipe is a tool to resolve the value of a subscribable in the template. A subscribable can be an Observable , an EventEmitter , or a Promise-->
+    <li *ngFor="let item of invoiceList | async">  
+       <B>Name:</B> {{item.name}} <B>Amount:</B>  {{item.amount}}
+    </li>
+</Ul>
+
+<br><b><font color="Violet">List Invoice By Id:Observable</font></b>
+<div *ngIf="invoiceObj | async as invoiceObj">
+    <B>Id:</B> {{invoiceObj.id}}  <B>Name:</B> {{invoiceObj.name}}  <B>Amount:</B>  {{invoiceObj.amount}} <B>Invoice Number:</B>  {{invoiceObj.invoiceNumber}}
+</div>
+
+
+<br><b><font color="green">List Invoice By Id: Promise</font></b>
+<div *ngIf="invoice">
+    <B>Id:</B> {{invoice.id}}  <B>Name:</B> {{invoice.name}}  <B>Amount:</B>  {{invoice.amount}} <B>Invoice Number:</B>  {{invoice.invoiceNumber}}
+</div>
+
+

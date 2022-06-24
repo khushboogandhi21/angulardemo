@@ -71,7 +71,13 @@
               "browserTarget": "angulardemo:build:production"
             },
             "development": {
-              "browserTarget": "angulardemo:build:development"
+              "browserTarget": "angulardemo:build:development", 
+              "proxyConfig":"src/proxy.conf.json"
+            },
+            "options": {
+              "browserTarget": "your-application-name:build",
+              "port": 4200,
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angulardemo:build"
+            "browserTarget": "angulardemo:build"           
           }
         },
         "test": {
